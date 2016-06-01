@@ -87,7 +87,7 @@
 <meta name="description" content="一个小站，杂七杂八的记录自己从业和学习的收获，若能帮助到来访者，必定甚感欣慰！">
 <meta property="og:type" content="website">
 <meta property="og:title" content="编程跬步">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://datastack.cc/index.html">
 <meta property="og:site_name" content="编程跬步">
 <meta property="og:description" content="一个小站，杂七杂八的记录自己从业和学习的收获，若能帮助到来访者，必定甚感欣慰！">
 <meta name="twitter:card" content="summary">
@@ -672,116 +672,7 @@
 </ul>
 <p><img src="http://image.webreader.duokan.com/mfsv2/download/s010/p01DhVn6i6QI/skROrCftnFqUkR.jpg?thumb=1024x&amp;scale=auto" alt="image"></p>
 <p>线性表中顺序表的实现（C++语言描述）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">//自定义顺序表类Vector</span><br><span class="line">class Vector &#123;</span><br><span class="line"></span><br><span class="line">//设置顺序表的size和length</span><br><span class="line">//其中size是指顺序表的最大尺寸</span><br><span class="line">//length是指顺序表中data的长度</span><br><span class="line">private:</span><br><span class="line">int size, length;</span><br><span class="line">int *data;</span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line"></span><br><span class="line">Vector(int input_size) &#123;</span><br><span class="line">size = input_size;</span><br><span class="line">length = 0;</span><br><span class="line">data = new int[size];</span><br><span class="line">&#125;</span><br><span class="line">~Vector() &#123;</span><br><span class="line">delete[] data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//在插入操作中，根据下标loc，插入value</span><br><span class="line">//插入后为保顺序，loc后的元素挨个向后偏移一个位置,切顺序表长度增加</span><br><span class="line">bool insert(int loc, int value) &#123;</span><br><span class="line">if (loc &lt; 0 || loc &gt; length) &#123;</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">if (length &gt;= size) &#123;</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">for (int i = length; i &gt; loc; --i) &#123;</span><br><span class="line">data[i] = data[i - 1];</span><br><span class="line">&#125;</span><br><span class="line">data[loc] = value;</span><br><span class="line">length++;</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int search(int value) &#123;</span><br><span class="line">for (int i = 0; i &lt; length; ++i) &#123;</span><br><span class="line">if (data[i] == value) &#123;</span><br><span class="line">return i;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//删除操作，删除某一个元素时，后面的元素一次向前偏移一个位置，顺序表长度减少</span><br><span class="line">bool remove(int index) &#123;</span><br><span class="line">if (index &lt; 0 || index &gt;= length) &#123;</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">for (int i = index + 1; i &lt; length; ++i) &#123;</span><br><span class="line">data[i - 1] = data[i];</span><br><span class="line">&#125;</span><br><span class="line">length = length - 1;</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void print() &#123;</span><br><span class="line">for(int i=0; i&lt;length; i++)</span><br><span class="line">&#123;</span><br><span class="line">if(i &gt; 0)</span><br><span class="line">&#123;</span><br><span class="line">cout &lt;&lt; &quot; &quot;;</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; data[i];</span><br><span class="line">&#125; </span><br><span class="line">cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">Vector a(2);</span><br><span class="line">cout &lt;&lt; a.insert(0, 1) &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; a.insert(0, 2) &lt;&lt; endl;</span><br><span class="line">a.print();</span><br><span class="line">cout &lt;&lt; a.remove(1) &lt;&lt; endl;</span><br><span class="line">a.print();</span><br><span class="line">cout &lt;&lt; a.search(0) &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; a.search(1) &lt;&lt; endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/01/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-01T11:31:14+08:00" content="2016-06-01">
-              2016-06-01
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/01/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/01/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">//自定义顺序表类Vector</span><br><span class="line">class Vector &#123;</span><br><span class="line"></span><br><span class="line">//设置顺序表的size和length</span><br><span class="line">//其中size是指顺序表的最大尺寸</span><br><span class="line">//length是指顺序表中data的长度</span><br><span class="line">private:</span><br><span class="line">int size, length;</span><br><span class="line">int *data;</span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line"></span><br><span class="line">Vector(int input_size) &#123;</span><br><span class="line">    size = input_size;</span><br><span class="line">    length = 0;</span><br><span class="line">    data = new int[size];</span><br><span class="line">&#125;</span><br><span class="line">~Vector() &#123;</span><br><span class="line">delete[] data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//在插入操作中，根据下标loc，插入value</span><br><span class="line">//插入后为保顺序，loc后的元素挨个向后偏移一个位置,切顺序表长度增加</span><br><span class="line">bool insert(int loc, int value) &#123;</span><br><span class="line">if (loc &lt; 0 || loc &gt; length) &#123;</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">if (length &gt;= size) &#123;</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">for (int i = length; i &gt; loc; --i) &#123;</span><br><span class="line">data[i] = data[i - 1];</span><br><span class="line">&#125;</span><br><span class="line">data[loc] = value;</span><br><span class="line">length++;</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int search(int value) &#123;</span><br><span class="line">for (int i = 0; i &lt; length; ++i) &#123;</span><br><span class="line">if (data[i] == value) &#123;</span><br><span class="line">return i;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">return -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//删除操作，删除某一个元素时，后面的元素一次向前偏移一个位置，顺序表长度减少</span><br><span class="line">bool remove(int index) &#123;</span><br><span class="line">if (index &lt; 0 || index &gt;= length) &#123;</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">for (int i = index + 1; i &lt; length; ++i) &#123;</span><br><span class="line">data[i - 1] = data[i];</span><br><span class="line">&#125;</span><br><span class="line">length = length - 1;</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void print() &#123;</span><br><span class="line">for(int i=0; i&lt;length; i++)</span><br><span class="line">&#123;</span><br><span class="line">if(i &gt; 0)</span><br><span class="line">&#123;</span><br><span class="line">cout &lt;&lt; &quot; &quot;;</span><br><span class="line">&#125;</span><br><span class="line">cout &lt;&lt; data[i];</span><br><span class="line">&#125; </span><br><span class="line">cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">Vector a(2);</span><br><span class="line">cout &lt;&lt; a.insert(0, 1) &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; a.insert(0, 2) &lt;&lt; endl;</span><br><span class="line">a.print();</span><br><span class="line">cout &lt;&lt; a.remove(1) &lt;&lt; endl;</span><br><span class="line">a.print();</span><br><span class="line">cout &lt;&lt; a.search(0) &lt;&lt; endl;</span><br><span class="line">cout &lt;&lt; a.search(1) &lt;&lt; endl;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -851,7 +742,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
