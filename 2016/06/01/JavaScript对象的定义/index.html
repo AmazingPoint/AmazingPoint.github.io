@@ -84,19 +84,22 @@
 
 
 
-<meta name="description" content="定义对象是Javascript的基本数据类型，对象是一种符合值，对象也可以看作是属性的无序集合，每个名称都有一个12345## 创建对象#### 一、对象直接量eg：
-var empty = {};             //没有任何属性的对象var point = {x:1, y:2};     //两个属性的对象var book= {                 //更复杂的对象“mai">
+<meta name="description" content="定义对象是Javascript的基本数据类型，对象是一种符合值，对象也可以看作是属性的无序集合，每个名称都有一个    key/value   对。
+创建对象一、对象直接量eg：
+1234567891011var empty = &amp;#123;&amp;#125;;             //没有任何属性的对象var point = &amp;#123;x:1, y:2&amp;#125;;     //两个属性的对象v">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript对象的定义">
 <meta property="og:url" content="http://datastack.cc/2016/06/01/JavaScript对象的定义/index.html">
 <meta property="og:site_name" content="编程跬步">
-<meta property="og:description" content="定义对象是Javascript的基本数据类型，对象是一种符合值，对象也可以看作是属性的无序集合，每个名称都有一个12345## 创建对象#### 一、对象直接量eg：
-var empty = {};             //没有任何属性的对象var point = {x:1, y:2};     //两个属性的对象var book= {                 //更复杂的对象“mai">
-<meta property="og:updated_time" content="2016-06-01T04:55:11.000Z">
+<meta property="og:description" content="定义对象是Javascript的基本数据类型，对象是一种符合值，对象也可以看作是属性的无序集合，每个名称都有一个    key/value   对。
+创建对象一、对象直接量eg：
+1234567891011var empty = &amp;#123;&amp;#125;;             //没有任何属性的对象var point = &amp;#123;x:1, y:2&amp;#125;;     //两个属性的对象v">
+<meta property="og:updated_time" content="2016-06-01T06:47:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript对象的定义">
-<meta name="twitter:description" content="定义对象是Javascript的基本数据类型，对象是一种符合值，对象也可以看作是属性的无序集合，每个名称都有一个12345## 创建对象#### 一、对象直接量eg：
-var empty = {};             //没有任何属性的对象var point = {x:1, y:2};     //两个属性的对象var book= {                 //更复杂的对象“mai">
+<meta name="twitter:description" content="定义对象是Javascript的基本数据类型，对象是一种符合值，对象也可以看作是属性的无序集合，每个名称都有一个    key/value   对。
+创建对象一、对象直接量eg：
+1234567891011var empty = &amp;#123;&amp;#125;;             //没有任何属性的对象var point = &amp;#123;x:1, y:2&amp;#125;;     //两个属性的对象v">
 
 
 
@@ -291,17 +294,27 @@ var empty = {};             //没有任何属性的对象var point = {x:1, y:2};
       
 
       
-        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>对象是Javascript的基本数据类型，对象是一种符合值，对象也可以看作是属性的无序集合，每个名称都有一个<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 创建对象</span><br><span class="line">#### 一、对象直接量</span><br><span class="line"></span><br><span class="line">eg：</span><br></pre></td></tr></table></figure></p>
-<p>var empty = {};             //没有任何属性的对象<br>var point = {x:1, y:2};     //两个属性的对象<br>var book= {                 //更复杂的对象<br>“main title”:   “JavaScript”,<br>“sub-title”:    “The Definitive Guide”,<br>“publish”:      “O’REILLY”,<br>author: {<br>firstname:  “David”,<br>surname:    “Flanagan”<br>}<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#### 二、通过new创建对象</span><br><span class="line"></span><br><span class="line">new运算符创建并初始化一个新对象，关键字new后跟随一个函数调用。这里的函数称作构造函数，构造函数初始化一个新创建的对象。JavaScript的原始类型都包含内置构造函数。</span><br><span class="line">eg：</span><br></pre></td></tr></table></figure>
-<p>var o = new Object(); //创建一个空对象 和{}一样<br>var a = new Array(); //创建一个空数组，和[]一样<br>var d = new Date();  //创建一个表示当前时间的Date对象<br>var r = new RegExp(“js”); //创建一个可以进行模式匹配的RegExp对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#### 原型</span><br><span class="line">ECMAScript5.0定义了一个名为Object.create()的方法，它创建一个新对象，其中第一个参数是这个对象的原型。</span><br><span class="line"></span><br><span class="line">eg:</span><br></pre></td></tr></table></figure>
-<p>var point = {x:1, y:2};<br>var o1 = Object.create(point);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; 在上面的代码中，o1继承了point</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 属性的查询和设置</span><br><span class="line"></span><br><span class="line">JavaScript访问对象的两种方法：</span><br></pre></td></tr></table></figure>
-<p>object.property<br>object[“property”]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">第一种语句使用**点运算符**和一个**标识符**</span><br><span class="line"></span><br><span class="line">第二种语句使用**方括号**和一个**字符串**</span><br><span class="line"></span><br><span class="line">&gt; 第二种语句看上去更像数组，只不过索引是通过字符串而不是数字。实际上这种数组被称为**关联数组**,也称作散列、映射或字典，**JavaScript对象都是关联数组**</span><br><span class="line"></span><br><span class="line">如下代码展示了使用[]和字符串访问对象的灵活性：</span><br></pre></td></tr></table></figure></p>
-<p>var customer = {<br>address0: “China”,<br>address1: “Shaanxi”,<br>address2: “Xi’an”,<br>address3: “Changan”,<br>address4: “ChangxingRoad”,<br>name: “Andy”,<br>sex: “M”,<br>age: 24<br>}</p>
-<p>var addr = “”;<br>for(i = 0; i &lt; 5; i++){<br>addr += customer[“address” + i] + “,”;<br>}<br>console.log(addr);</p>
-<p>```</p>
+        <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>对象是Javascript的基本数据类型，对象是一种符合值，对象也可以看作是属性的无序集合，每个名称都有一个    key/value   对。</p>
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><h4 id="一、对象直接量"><a href="#一、对象直接量" class="headerlink" title="一、对象直接量"></a>一、对象直接量</h4><p>eg：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> empty = &#123;&#125;;             <span class="comment">//没有任何属性的对象</span></span><br><span class="line"><span class="keyword">var</span> point = &#123;x:<span class="number">1</span>, y:<span class="number">2</span>&#125;;     <span class="comment">//两个属性的对象</span></span><br><span class="line"><span class="keyword">var</span> book= &#123;                 <span class="comment">//更复杂的对象</span></span><br><span class="line">		<span class="string">"main title"</span>:   <span class="string">"JavaScript"</span>,</span><br><span class="line">		<span class="string">"sub-title"</span>:    <span class="string">"The Definitive Guide"</span>,</span><br><span class="line">		<span class="string">"publish"</span>:      <span class="string">"O'REILLY"</span>,</span><br><span class="line">		author: &#123;</span><br><span class="line">		firstname:  <span class="string">"David"</span>,</span><br><span class="line">		surname:    <span class="string">"Flanagan"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="二、通过new创建对象"><a href="#二、通过new创建对象" class="headerlink" title="二、通过new创建对象"></a>二、通过new创建对象</h4><p>new运算符创建并初始化一个新对象，关键字new后跟随一个函数调用。这里的函数称作构造函数，构造函数初始化一个新创建的对象。JavaScript的原始类型都包含内置构造函数。<br>eg：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>(); <span class="comment">//创建一个空对象 和&#123;&#125;一样</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(); <span class="comment">//创建一个空数组，和[]一样</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>();  <span class="comment">//创建一个表示当前时间的Date对象</span></span><br><span class="line"><span class="keyword">var</span> r = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"js"</span>); <span class="comment">//创建一个可以进行模式匹配的RegExp对象</span></span><br></pre></td></tr></table></figure>
+<h4 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h4><p>ECMAScript5.0定义了一个名为Object.create()的方法，它创建一个新对象，其中第一个参数是这个对象的原型。</p>
+<p>eg:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> point = &#123;x:<span class="number">1</span>, y:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> o1 = <span class="built_in">Object</span>.create(point);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在上面的代码中，o1继承了point</p>
+</blockquote>
+<h2 id="属性的查询和设置"><a href="#属性的查询和设置" class="headerlink" title="属性的查询和设置"></a>属性的查询和设置</h2><p>JavaScript访问对象的两种方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">object.property</span><br><span class="line">object[<span class="string">"property"</span>]</span><br></pre></td></tr></table></figure>
+<p>第一种语句使用<strong>点运算符</strong>和一个<strong>标识符</strong></p>
+<p>第二种语句使用<strong>方括号</strong>和一个<strong>字符串</strong></p>
+<blockquote>
+<p>第二种语句看上去更像数组，只不过索引是通过字符串而不是数字。实际上这种数组被称为<strong>关联数组</strong>,也称作散列、映射或字典，<strong>JavaScript对象都是关联数组</strong></p>
+</blockquote>
+<p>如下代码展示了使用[]和字符串访问对象的灵活性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> customer = &#123;</span><br><span class="line">	address0: <span class="string">"China"</span>,	</span><br><span class="line">	address1: <span class="string">"Shaanxi"</span>,</span><br><span class="line">	address2: <span class="string">"Xi'an"</span>,</span><br><span class="line">	address3: <span class="string">"Changan"</span>,</span><br><span class="line">	address4: <span class="string">"ChangxingRoad"</span>,</span><br><span class="line">	name: <span class="string">"Andy"</span>,</span><br><span class="line">	sex: <span class="string">"M"</span>,</span><br><span class="line">	age: <span class="number">24</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> addr = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">	addr += customer[<span class="string">"address"</span> + i] + <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(addr);</span><br></pre></td></tr></table></figure>
 <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>JavaScript对象具有“自有属性”，也有一些属性是从原型对象继承而来的。</p>
 <p>假设要查询对象o的属性x，如果o中不存在x，那么将继续在o的原型对象中查询属性x，如果还没有则依此类推。</p>
 
@@ -451,7 +464,7 @@ var empty = {};             //没有任何属性的对象var point = {x:1, y:2};
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建对象"><span class="nav-number">2.</span> <span class="nav-text">创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、对象直接量"><span class="nav-number">2.0.1.</span> <span class="nav-text">一、对象直接量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、通过new创建对象"><span class="nav-number">2.0.2.</span> <span class="nav-text">二、通过new创建对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原型"><span class="nav-number">2.0.3.</span> <span class="nav-text">原型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性的查询和设置"><span class="nav-number">3.</span> <span class="nav-text">属性的查询和设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">4.</span> <span class="nav-text">继承</span></a></li></ol></div>
             
           </div>
         </section>
