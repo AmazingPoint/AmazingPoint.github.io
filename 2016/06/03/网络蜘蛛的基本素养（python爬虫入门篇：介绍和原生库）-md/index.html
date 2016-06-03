@@ -111,7 +111,7 @@
 
 试想一下，蜘蛛在自己的八卦阵（网络）中">
 <meta property="og:image" content="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-3/39724707.jpg">
-<meta property="og:updated_time" content="2016-06-03T07:30:17.000Z">
+<meta property="og:updated_time" content="2016-06-03T07:39:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络蜘蛛的基本素养（python爬虫入门篇：介绍和原生库）.md">
 <meta name="twitter:description" content="大部分爬虫教材会把网络爬虫比作一只蜘蛛，而蜘蛛网则是我们的网络，这只蜘蛛会把触手伸向不同的地方，从而获取网络上的内容。
@@ -372,7 +372,7 @@
 <h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2><p>通过 urllib2可以轻松的获取目标页面内容，那么最让人头疼的事情来了，那就是数据分析（筛选）</p>
 <p>这里我们暂时只使用最笨的一种方法，那就是在本地进行字符串的匹配来获取想要的内容，这里则需要使用到正则表达式，关于正则表达式可以参考<a href="http://www.doc88.com/p-1028550760789.html" target="_blank" rel="external">《python核心编程 第三版》</a>的第一章，也可以观看<a href="http://imooc.com" target="_blank" rel="external">imooc</a>的视频<a href="http://www.imooc.com/learn/550" target="_blank" rel="external">python正则表达式</a>,利用两个小时的时间对正则表达式有一个全面的了解。</p>
 <p>比如，上面得到的内容，我们可以对美女图片的代码进行分析，并作出匹配：<br><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-6-3/39724707.jpg" alt="分析html源代码，得到规则"></p>
-<p>示例代码（对上面获得的content进行正则匹配，去的其中的图片）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">pattern = re.compile(<span class="string">'&lt;li class="column-li".*?src="(.*?)".*?alt="(.*?)"'</span>, re.S)</span><br><span class="line">items = re.findall(pattern,content)</span><br></pre></td></tr></table></figure></p>
+<p>示例代码（对上面获得的content进行正则匹配，得到其中的图片）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">pattern = re.compile(<span class="string">'&lt;li class="column-li".*?src="(.*?)".*?alt="(.*?)"'</span>, re.S)</span><br><span class="line">items = re.findall(pattern,content)</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>上面代码中的 compile 表示匹配规则， 其中.<em>?可以理解为忽略这期间的内容，我们从&lt;li class=”column-li” 开始匹配，忽略中间的内容直到 src=”出现，然后获取中间的内容(.</em>?) 带上括号表示这些内容在后面fiandall中会被保存，以此类推，我们第二个(.*?)代表的则是alt内的内容，也就是图片的描述。</p>
 </blockquote>
