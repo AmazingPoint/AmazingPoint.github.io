@@ -1,0 +1,668 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="math," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="“I have a major pet peeve that I need to confess. I go insane when I hear programmers talking about statistics like they know shit when it’s clearly obvious they do not. I’ve been studying it for year">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Is Statistics">
+<meta property="og:url" content="http://datastack.cc/2016/06/13/What-Is-Statistics/index.html">
+<meta property="og:site_name" content="DataStack">
+<meta property="og:description" content="“I have a major pet peeve that I need to confess. I go insane when I hear programmers talking about statistics like they know shit when it’s clearly obvious they do not. I’ve been studying it for year">
+<meta property="og:image" content="http://o8orq3ka2.bkt.clouddn.com/sampleAndPopulation.jpg">
+<meta property="og:image" content="http://o8orq3ka2.bkt.clouddn.com/population%20sample.png">
+<meta property="og:updated_time" content="2016-06-13T09:26:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="What Is Statistics">
+<meta name="twitter:description" content="“I have a major pet peeve that I need to confess. I go insane when I hear programmers talking about statistics like they know shit when it’s clearly obvious they do not. I’ve been studying it for year">
+<meta name="twitter:image" content="http://o8orq3ka2.bkt.clouddn.com/sampleAndPopulation.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> What Is Statistics | DataStack </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?m.js?6aaec1ea16769697c1a07a4a941";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">DataStack</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Big Data Is Anything at All</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-math">
+          <a href="/tags/math" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Math
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-struct">
+          <a href="/tags/datastruct" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Struct
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-script">
+          <a href="/tags/js" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Script
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-html5">
+          <a href="/tags/html5" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            HTML5
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-python">
+          <a href="/tags/python" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Python
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-mysql">
+          <a href="/tags/mysql" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            MySQL
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                What Is Statistics
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-13T10:08:22+08:00" content="2016-06-13">
+              2016-06-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/13/What-Is-Statistics/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/13/What-Is-Statistics/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>“<strong><em>I have a major pet peeve that I need to confess. I go insane when I hear programmers talking about statistics like they know shit when it’s clearly obvious they do not. I’ve been studying it for years and years and still don’t think I know anything. This article is my call for all programmers to finally learn enough about statistics to at least know they don’t know shit. I have no idea why, but their confidence in their lacking knowledge is only surpassed by their lack of confidence in their personal appearance.</em></strong>“ —from <a href="https://zedshaw.com/archive/programmers-need-to-learn-statistics-or-i-will-kill-them-all/" target="_blank" rel="external">Programmers Need To Learn Statistics Or I Will Kill Them All</a></p>
+<p>So, I learn statistics to confrim that I don’t want to know only shit!</p>
+<a id="more"></a>
+<h2 id="Why-Study-Statistics"><a href="#Why-Study-Statistics" class="headerlink" title="Why Study Statistics?"></a>Why Study Statistics?</h2><h3 id="The-first-reason"><a href="#The-first-reason" class="headerlink" title="The first reason"></a>The first reason</h3><p>The first reason is that numerical information is erverwhere. and you will be bombarded with numerical information.</p>
+<h3 id="The-second-reason"><a href="#The-second-reason" class="headerlink" title="The second reason"></a>The second reason</h3><p>Statistical thecniques are used make decisions that affect our daily lives.</p>
+<h3 id="The-third-reason"><a href="#The-third-reason" class="headerlink" title="The third reason"></a>The third reason</h3><p>the knowledge of statistical methods will help you understand how decisions are made and give you a better understanding of how they affect you.</p>
+<h2 id="What-Is-Meant-by-Statistics"><a href="#What-Is-Meant-by-Statistics" class="headerlink" title="What Is Meant by Statistics?"></a>What Is Meant by Statistics?</h2><h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><blockquote>
+<p><strong><em>STATISTICS</em></strong>  The science of collecting, organizing, presenting, analyzing, and interpreting data to assist in making more effective decisions.</p>
+</blockquote>
+<h3 id="Instance"><a href="#Instance" class="headerlink" title="Instance"></a>Instance</h3><p>For instance, Managers must make decisions about the quality of their product or service. For example:</p>
+<p> customers call software companies for technical advice when they are not able to resolve an issue regarding the software. One measure of the quality of customer service is the time a customer must wait for a technical consultant to answer the call.</p>
+<p>The company would then collect and analyze data on the response time. Does the typical response time differ by day of the week or time of day? If the response times are increasing, managers might decide to increase the number of technical consultants at particular times of the day or week.</p>
+<h2 id="Types-of-Statistics"><a href="#Types-of-Statistics" class="headerlink" title="Types of Statistics"></a>Types of Statistics</h2><p>The study statistics is usually devided into two categories: <strong>descriptive statistics</strong> and <strong>inferential statistics</strong>.</p>
+<h3 id="Descriptive-Statistics"><a href="#Descriptive-Statistics" class="headerlink" title="Descriptive Statistics"></a>Descriptive Statistics</h3><h4 id="Definition-1"><a href="#Definition-1" class="headerlink" title="Definition"></a>Definition</h4><blockquote>
+<p><strong><em>DESCRIPTIVE STATISTICS</em></strong> Method of orgnaizing, summarizing, and presenting data in an informative way.</p>
+</blockquote>
+<h4 id="Instance-1"><a href="#Instance-1" class="headerlink" title="Instance"></a>Instance</h4><p>For instance, The United States government reports the population of United States :</p>
+<ul>
+<li>1960  :  179,323,000</li>
+<li>1970  :  203,302,000</li>
+<li>1980  :  226,542,000</li>
+<li>1990  :  248,709,000</li>
+<li>2000  :  265,000,000</li>
+<li>2010  :  308,400,000<br>This information is decriptive statistics.</li>
+</ul>
+<p>It is descriptive statistics if we calculate the percentage growth from one decade to next.However. It would not be descriptive statistics if we use these to estimate the population of the United States in the year 2020 or the percentage growth from 2010 to 2020.Why? The reson is these statistics are not being used to summarize past populations but to estimate future populations.</p>
+<h3 id="Inferential-Statistics"><a href="#Inferential-Statistics" class="headerlink" title="Inferential Statistics"></a>Inferential Statistics</h3><blockquote>
+<p><strong><em>INFERENTIAL STATISTICS</em></strong> The methods used to estimate a property of population on the basis of a sample.</p>
+</blockquote>
+<p>A <strong>population</strong> may consist of individuals —such as all the CEOs from the Fortune 500 companies.</p>
+<blockquote>
+<p><strong>POPULATION</strong> The entire set of individuals or objects of interest or the measurements obtained from all individuals or objects of interest.</p>
+<p><strong>SAMPLE</strong> A portion, or part, of the population of interest.</p>
+</blockquote>
+<p>The relationship between a sample and a population is portrayed below. For example, we wish to estimate the mean miles per gallon of SUVs. Six SUVs are selected from the population. The mean MPG of the six is used to estimate MPG for the population.</p>
+<p><img src="http://o8orq3ka2.bkt.clouddn.com/sampleAndPopulation.jpg" alt="Population and Sample"></p>
+<p><img src="http://o8orq3ka2.bkt.clouddn.com/population%20sample.png" alt="Population and Sample example 2"></p>
+<h3 id="End-and-Next"><a href="#End-and-Next" class="headerlink" title="End and Next"></a>End and Next</h3><p>next, I will study Variables!</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/math/" rel="tag">#math</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/03/网络蜘蛛的基本素养（python爬虫入门篇：介绍和原生库）/" rel="next" title="网络蜘蛛的基本素养（python爬虫入门篇：介绍和原生库）.md">
+                <i class="fa fa-chevron-left"></i> 网络蜘蛛的基本素养（python爬虫入门篇：介绍和原生库）.md
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/13/What-Is-Statistics/"
+           data-title="What Is Statistics" data-url="http://datastack.cc/2016/06/13/What-Is-Statistics/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://o8orq3ka2.bkt.clouddn.com/link.jpeg"
+               alt="SmartAn" />
+          <p class="site-author-name" itemprop="name">SmartAn</p>
+          <p class="site-description motion-element" itemprop="description">a website record all about Data Science</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-Study-Statistics"><span class="nav-number">1.</span> <span class="nav-text">Why Study Statistics?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-first-reason"><span class="nav-number">1.1.</span> <span class="nav-text">The first reason</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-second-reason"><span class="nav-number">1.2.</span> <span class="nav-text">The second reason</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-third-reason"><span class="nav-number">1.3.</span> <span class="nav-text">The third reason</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-Is-Meant-by-Statistics"><span class="nav-number">2.</span> <span class="nav-text">What Is Meant by Statistics?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definition"><span class="nav-number">2.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instance"><span class="nav-number">2.2.</span> <span class="nav-text">Instance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Types-of-Statistics"><span class="nav-number">3.</span> <span class="nav-text">Types of Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Descriptive-Statistics"><span class="nav-number">3.1.</span> <span class="nav-text">Descriptive Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instance-1"><span class="nav-number">3.1.2.</span> <span class="nav-text">Instance</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inferential-Statistics"><span class="nav-number">3.2.</span> <span class="nav-text">Inferential Statistics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#End-and-Next"><span class="nav-number">3.3.</span> <span class="nav-text">End and Next</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SmartAn</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"amazingpoint"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
