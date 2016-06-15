@@ -10,10 +10,12 @@ div.globe-container {
   height: 500px;
   margin: 100px auto;
   border-radius: 500px;
+  -ms-border-radius: 500px;
   background: url(http://o8orq3ka2.bkt.clouddn.com/earth3.jpg) top left no-repeat;
   -webkit-animation: rotate 15s infinite linear reverse;
   -moz-animation: rotate 15s infinite linear reverse;
   -o-animation: rotate 15s infinite linear reverse;
+  -ms-animation: rotate 15s infinite linear reverse;
   animation: rotate 15s infinite linear reverse;
   overflow: hidden;
   box-shadow: 0px 0px 30px #fff;
@@ -25,6 +27,7 @@ div.globe {
   height: 500px;
   box-shadow: inset 30px 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 500px;
+  -ms-border-radius: 500px;
 }
 @keyframes rotate {
   0% {
