@@ -1,0 +1,36 @@
+body,a{
+    background:#000;
+    color:#fff;
+    text-align:center;
+}
+
+div.globe-container {
+  display: block!important;
+  width: 500px;
+  height: 500px;
+  margin: 100px auto;
+  border-radius: 500px;
+  background: url(http://o8orq3ka2.bkt.clouddn.com/earth3.jpg) top left no-repeat;
+  -webkit-animation: rotate 15s infinite linear reverse;
+  -moz-animation: rotate 15s infinite linear reverse;
+  -o-animation: rotate 15s infinite linear reverse;
+  animation: rotate 15s infinite linear reverse;
+  overflow: hidden;
+  box-shadow: 0px 0px 30px #fff;
+}
+div.globe {
+  display: block!important;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  box-shadow: inset 30px 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 500px;
+}
+@keyframes rotate {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -1000px 0px;
+  }
+}
